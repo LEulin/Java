@@ -85,10 +85,10 @@ public class Main {
                 User a = user.login(user);
 
                 if (a instanceof Admin == true) {
-                    System.out.println("Your account is now logged in as an Administrator! ");
-                    System.out.println("-------------------------------------------------------------------------------");
-                    System.out.println("Choose transactions:\n0. Add Medicine\n1. Remove Medicine\n2. Display Medicines\n3. View Orders\n4. Logout");
                     while (true) {
+                        System.out.println("Your account is now logged in as an Administrator! ");
+                        System.out.println("-------------------------------------------------------------------------------");
+                        System.out.println("Choose transactions:\n0. Add Medicine\n1. Remove Medicine\n2. Display Medicines\n3. View Orders\n4. Logout");
                         System.out.print("Enter your choice: ");
                         int option = input.nextInt();
                         if (option == 0) {
@@ -109,10 +109,10 @@ public class Main {
 
                             //a.displayMedicines();
                         } else if (option == 3) {
-                            System.out.printf("%15s %5s %20s %5s %25s %5s %15s %5s %10s", "ID", "|", "Name" , "|" , "Ordered Generic Name" , "|" , "Quantity" , "|" , "Amount\n");
+                            System.out.printf("%10s %5s %10s %5s %25s %5s %15s %5s %10s", "ID", "|", "User ID" ,"|", "Ordered Generic Name" , "|" , "Quantity" , "|" , "Amount\n");
                             System.out.printf("%s", "-------------------------------------------------------------------------------------------------------------------------------\n");
                             for (int i = 0; i < order.getOrderList().size(); i++) {
-                                System.out.printf("%15s %5s %20s %5s %25s %5s %15s %5s %10s \n", order.getOrderList().get(i).getId(), "|", order.getOrderList().get(i).getUserId(), "|", order.getOrderList().get(i).getOrderedName(), "|", order.getOrderList().get(i).getQuantity(), "|", order.getOrderList().get(i).getAmount());
+                                System.out.printf("%10s %5s %10s %5s %25s %5s %15s %5s %10s \n", order.getOrderList().get(i).getId(), "|", order.getOrderList().get(i).getUserId(),"|", order.getOrderList().get(i).getOrderedName(), "|", order.getOrderList().get(i).getQuantity(), "|", order.getOrderList().get(i).getAmount());
                             }
                         } else if (option == 4) {
                             System.out.println("You are now logged out!");
